@@ -104,4 +104,4 @@ To customize the company name, address and colors, edit the constants at the top
 
 ## Author
 
-Imen Hammami - internship project, 2024.
+Imen Hammami - internship project, 2022.
