@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="817.0" prefWidth="1299.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ModifierFactureController">
+   
+   <children>
+      <Pane prefHeight="804.0" prefWidth="238.0" style="-fx-background-color: #4152B3;">
+         <children>
+            <Button fx:id="btnSignout" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="14.0" layoutY="518.0" mnemonicParsing="false" onAction="#btnSignout" prefHeight="42.0" prefWidth="207.0" style="-fx-background-color: #7B96D4;" text="    Deconnexion" textFill="WHITE">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnListeFactures" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="16.0" layoutY="194.0" mnemonicParsing="false" onAction="#versListeFacture" prefHeight="42.0" prefWidth="207.0" style="-fx-background-color: #7B96D4;" text="Liste des Factures" textFill="#fff9f9">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            
+            <Button fx:id="btnModifierFactures" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="14.0" layoutY="126.0" mnemonicParsing="false" onAction="#versmodifierFacture" prefHeight="42.0" prefWidth="207.0" style="-fx-background-color: #7B96D4;" text="Modifier vos Factures" textFill="WHITE">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </Button>
+            <ImageView fitHeight="29.0" fitWidth="37.0" layoutX="26.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Img/7691_19401_computer_monitor_screen.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="27.0" fitWidth="36.0" layoutX="27.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Img/7656_19331_black_folder_mypictures.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="41.0" fitWidth="33.0" layoutX="21.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Img/90987_229542_logout.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="86.0" fitWidth="150.0" layoutX="43.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Img/Capture_d_écran_2024-05-15_174904-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnImprimerFacture" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="16.0" layoutY="258.0" mnemonicParsing="false" onAction="#versImprimerFacture" prefHeight="42.0" prefWidth="207.0" style="-fx-background-color: #7B96D4;" text="Imprimer Facture" textFill="#fff9f9">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="39.0" fitWidth="49.0" layoutX="22.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Img/7645_19309_printer_web.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TextField fx:id="Zrecherche" layoutX="326.0" layoutY="122.0" prefHeight="26.0" prefWidth="238.0" promptText="Rechercher une Facture ..." />
+      <TableView fx:id="factureTableView" layoutX="279.0" layoutY="202.0" onMousePressed="#charger" prefHeight="200.0" prefWidth="1001.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="75.0" text="Id" />
+            <TableColumn fx:id="date" prefWidth="84.79998779296875" text="Date" />
+          <TableColumn fx:id="codeclient" prefWidth="86.39996337890625" text="Code Client" />
+            <TableColumn fx:id="des" prefWidth="78.39996337890625" text="Designation" />
+            <TableColumn fx:id="quantite" prefWidth="71.20001220703125" text="Quantite" />
+            <TableColumn fx:id="PU" prefWidth="56.0" text="P.U" />
+            <TableColumn fx:id="PT" prefWidth="75.0" text="P.T" />
+            <TableColumn fx:id="tolale" prefWidth="75.0" text="TOTAL" />
+            <TableColumn fx:id="fodec" prefWidth="75.0" text="FODEC" />
+            <TableColumn fx:id="tva" prefWidth="75.0" text="T.V.A" />
+            <TableColumn fx:id="totalTTC" prefWidth="84.79998779296875" text="Totale TTC" />
+            <TableColumn fx:id="netAPayer" prefWidth="79.20013427734375" text="NET A Payer" />
+            <TableColumn fx:id="netpayer1" prefWidth="79.20013427734375" text="PDF" />
+        </columns>
+      </TableView>
+      <GridPane layoutX="277.0" layoutY="428.0">
+        <columnConstraints>
+          <ColumnConstraints />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="104.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.19998779296873" minWidth="10.0" prefWidth="158.39999999999998" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.19998779296873" minWidth="10.0" prefWidth="47.99997558593748" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="273.6000122070312" minWidth="10.0" prefWidth="268.8000244140625" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="273.6000122070312" minWidth="10.0" prefWidth="268.8000244140625" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Code Client" GridPane.columnIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Designation" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Quantite" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Zcodeclient" prefHeight="26.0" prefWidth="137.0" GridPane.columnIndex="2" />
+            <TextField fx:id="Zdesignation" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="P.U" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label style="-fx-background-color: pink;" text="P.T" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Zpu" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="Zpt" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label style="-fx-background-color: pink;" text="TOTAL" GridPane.columnIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label style="-fx-background-color: pink;" text="Fodec" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label style="-fx-background-color: PINK;" text="T.V.A" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label style="-fx-background-color: pink;" text="Total T.T.C" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label style="-fx-background-color: pink;" text="NET A PAYER" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ZTOTAL" GridPane.columnIndex="5" />
+            <TextField fx:id="ZFODEC" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <TextField fx:id="Znetpayer" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <TextField fx:id="ZTVA" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <TextField fx:id="ZTTC" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <Spinner fx:id="quantityspinner" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button fx:id="calcultolatlbtn" maxHeight="-Infinity" mnemonicParsing="false" onAction="#onClickcalcultotal" prefHeight="32.0" prefWidth="277.0" style="-fx-background-color: #F1C40F; -fx-background-radius: 15;" text="Calculer" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="5" GridPane.rowIndex="5">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="42.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="5">
+               <image>
+                  <Image url="@Img/4898_14252_calculator_math.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="calculTotal1" maxHeight="-Infinity" mnemonicParsing="false" onAction="#onClickcalcultotal1" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #F1C40F; -fx-background-radius: 15;" text="Calculer" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="42.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <image>
+                  <Image url="@Img/4898_14252_calculator_math.png" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+      <Label layoutX="263.0" layoutY="45.0" text="Modifier Vos Factures" textFill="#4152b3">
+         <font>
+            <Font name="Candara" size="24.0" />
+         </font>
+      </Label>
+      <Spinner fx:id="filtrerzone" layoutX="326.0" layoutY="156.0" prefHeight="26.0" prefWidth="290.0" />
+      <Button fx:id="searchButton" alignment="CENTER" contentDisplay="CENTER" layoutX="635.0" layoutY="112.0" mnemonicParsing="false" onAction="#onClickSearch" prefHeight="42.0" prefWidth="158.0" style="-fx-background-color: #009ee2; -fx-border-width: 1; -fx-border-radius: 15; -fx-background-radius: 15;" text="Rechercher" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Verdana" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="supprimerbtn" layoutX="516.0" layoutY="712.0" mnemonicParsing="false" onAction="#onsupprimer" prefHeight="32.0" prefWidth="138.0" style="-fx-background-color: #d73a49; -fx-background-radius: 15;" text="     Supprimer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="modifierbtn" layoutX="508.0" layoutY="652.0" mnemonicParsing="false" onAction="#onClickmodifier" prefHeight="34.0" prefWidth="138.0" style="-fx-background-color: #1982c4; -fx-background-radius: 15;" text="Modifier" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="Ajouterbtn1" layoutX="332.0" layoutY="652.0" mnemonicParsing="false" onAction="#onClickAjouter" prefHeight="34.0" prefWidth="138.0" style="-fx-background-color: #6bc45a; -fx-background-radius: 15;" text="Ajouter" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="647.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Img/43447_107976_in_zoom.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="339.0" layoutY="657.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Img/2aaf5af8-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="766.0" layoutY="739.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="523.0" layoutY="716.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Img/56847_139912_delete.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="523.0" layoutY="657.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Img/31980_78186_document_edit_write.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="clearBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="332.0" layoutY="711.0" mnemonicParsing="false" onAction="#onClickClear" prefHeight="34.0" prefWidth="138.0" style="-fx-background-color: #AC92EB; -fx-border-width: 1; -fx-border-radius: 15; -fx-background-radius: 15;" text="Clear" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Verdana" size="12.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="339.0" layoutY="716.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Img/5773_15926_clean.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="169.0" layoutX="1004.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+
+      </ImageView>
+   </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</AnchorPane>

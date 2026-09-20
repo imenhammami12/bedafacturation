@@ -1,0 +1,6 @@
+.idea/
+out/
+bin/
+classes/
+*.iml
+facture_*.pdf
